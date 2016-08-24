@@ -7,5 +7,5 @@ $(document).ready(function() {
   	var numericaldate = date.getDate(); // get the current number of the date (ie 12th etc)
   	var year = date.getFullYear(); // get the current year
   	var status = ((date >= 1 && date !== 9) ? "Active" : "Inactive"); // See if the user is active or inactive
-		$('#time').text('<h2>' + day + numericaldate + month + year + '</h2>'); // write the result to the time div tag
+		$('#time').text(day + ' ' + numericaldate + ' ' + month + ' ' + year); // write the result to the time div tag
 });
