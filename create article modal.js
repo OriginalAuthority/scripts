@@ -15,18 +15,18 @@ $("#my-tools-menu").append('<li class="custom">' + mw.html.element('a', { id: 'h
 							"<p>Please insert a title for your article</p>"+
 							"<form>" +
 							"<textarea class=\"title\" name=\"Insert Title\" id=\"title\" style=\"margin: 0px;width: 200px;height: 20px;\"></textarea>" +
-							"</form><br />" +
+							"</form>" +
 							// Edit summary for the page creation
 								"<h2>Edit Summary</h2>" +
 								"<p>Please insert a Summary for the creation, a default is given:</p>"+
 								"<form>" +
 								"<textarea class=\"summary\" name=\"Edit summary\" id=\"summary\" style=\"margin: 0px;width: 200px;height: 20px;\">Creating article!</textarea>" +
-								"</form>"+
+								"</form><br />"+
 							// Article text
 									"<h2>Article text</h2>" +
 									"<p>Please enter the text to be present on the article. Beware, clicking confirm will publish anything in this box under your username and IP!</p>"+
 									"<form>" +
-									"<textarea class=\"summary\" name=\"Edit summary\" id=\"articletext\" style=\"margin: 0px;width: 200px;height: 500px; overflow: auto;\"></textarea>" +
+									"<textarea class=\"summary\" name=\"Edit summary\" id=\"articletext\" style=\"margin: 0px;width: 500px;height: 500px; overflow: auto; float: center;\"></textarea>" +
 									"</form>"
 					),
 					size: "large",
@@ -67,9 +67,9 @@ $("#my-tools-menu").append('<li class="custom">' + mw.html.element('a', { id: 'h
 		// confirm - user clicked 'Ok'
 		modal.bind("confirm", function(e) {
 			e.preventDefault();
-			$articletext = $('#articletext').val();
-			$createsummary = $('#summary').val();
-			$articletitle = $('#title').val();
+			var $articletext =  modal.$element.find('#articletext').val(),
+			$createsummary =  modal.$element.find('#summary').val(),
+			$articletitle =  modal.$element.find('#title').val();
 			new mw.Api().post({
 					action: 'edit',
 					title: $articletitle,
