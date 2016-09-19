@@ -10,23 +10,27 @@ $("#my-tools-menu").append('<li class="custom">' + mw.html.element('a', { id: 'h
 				vars: {
 					id: "my-modals-element-id",
 					title: "Create New Article",
-					content: (
+					content: (	
+							"<div style=\"width:50%; float: left; display:inline-block;\">" +
 							"<h2>Article Title:</h2>" +
 							"<p>Please insert a title for your article</p>"+
 							"<form>" +
 							"<textarea class=\"title\" name=\"Insert Title\" id=\"title\" style=\"margin: 0px;width: 200px;height: 20px;\"></textarea>" +
 							"</form>" +
+							"</div>" +
 							// Edit summary for the page creation
-								"<h2>Edit Summary</h2>" +
-								"<p>Please insert a Summary for the creation, a default is given:</p>"+
+								"<div style=\"width:50%; float: right; display:inline-block;\">" +
+								"<h2 style=\"float:right;\">Edit Summary</h2><br />" +
+								"<p style=\"float:right;\">Please insert a Summary for the creation, a default is given:</p><br />"+
 								"<form>" +
-								"<textarea class=\"summary\" name=\"Edit summary\" id=\"summary\" style=\"margin: 0px;width: 200px;height: 20px;\">Creating article!</textarea>" +
+								"<textarea class=\"summary\" name=\"Edit summary\" id=\"summary\" style=\"margin: 0px;width: 200px;height: 20px; float:right;\">Creating article!</textarea>" +
 								"</form><br />"+
+								"</div>" +
 							// Article text
-									"<h2>Article text</h2>" +
-									"<p>Please enter the text to be present on the article. Beware, clicking confirm will publish anything in this box under your username and IP!</p>"+
+									"<h2 style=\"text-align:center; clear:both;\">Article text</h2>" +
+									"<p style=\"text-align:center; padding: 5px;\">Please enter the text to be present on the article. Beware, clicking confirm will publish anything in this box under your username and IP!</p>"+
 									"<form>" +
-									"<textarea class=\"summary\" name=\"Edit summary\" id=\"articletext\" style=\"margin: 0px;width: 500px;height: 500px; overflow: auto; float: center;\"></textarea>" +
+									"<textarea class=\"summary\" name=\"Edit summary\" id=\"articletext\" style=\"margin: 0px;width: 100% ;height: 500px; overflow: auto; float: z-index:0;\"></textarea>" +
 									"</form>"
 					),
 					size: "large",
